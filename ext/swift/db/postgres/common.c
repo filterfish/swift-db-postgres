@@ -26,7 +26,7 @@ VALUE db_postgres_normalized_sql(VALUE sql) {
 
     while (i < RSTRING_LEN(sql)) {
         if (*ptr == '?')
-            j += snprintf(normalized + j, 4, "$%d", n++);
+            j += snprintf(normalized + j, 5, "$%d", n++);
         else
             normalized[j++] = *ptr;
         ptr++;
